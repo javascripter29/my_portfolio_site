@@ -1,13 +1,26 @@
 "use client";
 
-const navItems = [
-  { label: "Главная", href: "#hero" },
-  { label: "Услуги", href: "#services" },
-  { label: "Этапы", href: "#process" },
-  { label: "Контакт", href: "#contact" },
-];
+import { LanguageSwitcher } from "@/components/language-switcher";
+import type { Language, SiteCopy } from "@/lib/i18n";
 
-export function HeroShowcase() {
+type HeroShowcaseProps = {
+  copy: SiteCopy;
+  language: Language;
+  onLanguageChange: (language: Language) => void;
+};
+
+export function HeroShowcase({
+  copy,
+  language,
+  onLanguageChange,
+}: HeroShowcaseProps) {
+  const navItems = [
+    { label: copy.nav.hero, href: "#hero" },
+    { label: copy.nav.services, href: "#services" },
+    { label: copy.nav.process, href: "#process" },
+    { label: copy.nav.contact, href: "#contact" },
+  ];
+
   return (
     <section
       id="hero"
@@ -21,13 +34,32 @@ export function HeroShowcase() {
           <header className="relative z-20 flex flex-wrap items-center justify-between gap-4 px-4 pt-5 sm:px-7 md:flex-nowrap md:px-14 md:pt-12">
             <a
               href="#hero"
-              className="group grid size-9 place-items-center"
-              aria-label="Наверх"
+              className="brand-logo group"
+              aria-label={copy.hero.logoLabel}
             >
-              <span className="grid gap-1.5">
-                <span className="block h-1.5 w-7 rotate-45 rounded-full bg-[#78ff8f] transition group-hover:bg-white" />
-                <span className="block h-1.5 w-7 -rotate-45 rounded-full bg-[#4adf67] transition group-hover:bg-white" />
-              </span>
+              <svg
+                aria-hidden="true"
+                className="brand-logo__mark"
+                fill="none"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  className="brand-logo__ring"
+                  d="M24 4.75c10.63 0 19.25 8.62 19.25 19.25S34.63 43.25 24 43.25 4.75 34.63 4.75 24 13.37 4.75 24 4.75Z"
+                />
+                <path
+                  className="brand-logo__bracket"
+                  d="m18.1 16.35-6.15 7.25 6.15 7.25"
+                />
+                <path
+                  className="brand-logo__bracket"
+                  d="m29.9 16.35 6.15 7.25-6.15 7.25"
+                />
+                <path
+                  className="brand-logo__letter"
+                  d="M18.9 31.1V17.7l5.1 6.7 5.1-6.7v13.4"
+                />
+              </svg>
             </a>
 
             <nav className="hidden items-center gap-10 text-[0.68rem] font-black uppercase tracking-[0.18em] text-white/70 md:flex">
@@ -38,36 +70,37 @@ export function HeroShowcase() {
               ))}
             </nav>
 
-            <a
-              href="#contact"
-              className="hover-bright rounded-full border border-[#78ff8f]/35 px-3 py-2 text-[0.68rem] font-black uppercase tracking-[0.08em] text-white transition hover:border-white sm:px-4 sm:text-xs sm:tracking-[0.12em]"
-            >
-              Оставить заявку
-            </a>
+            <div className="flex items-center gap-3">
+              <LanguageSwitcher language={language} onChange={onLanguageChange} />
+              <a
+                href="#contact"
+                className="hover-bright rounded-full border border-[#78ff8f]/35 px-3 py-2 text-[0.68rem] font-black uppercase tracking-[0.08em] text-white transition hover:border-white sm:px-4 sm:text-xs sm:tracking-[0.12em]"
+              >
+                {copy.hero.cta}
+              </a>
+            </div>
           </header>
 
           <div className="relative z-10 grid min-h-[580px] gap-10 px-4 pb-7 pt-12 sm:px-7 md:min-h-[620px] md:grid-cols-2 md:px-14 md:pb-12 md:pt-20">
             <div className="flex flex-col justify-center md:pb-12">
               <p className="text-xs font-black uppercase tracking-[0.22em] text-white/76">
-                Frontend / Next.js / Python
+                {copy.hero.top}
               </p>
               <h1 className="mt-4 max-w-xl text-balance text-[clamp(2.7rem,14vw,7.2rem)] font-black uppercase leading-[0.86] tracking-normal text-white sm:text-[clamp(3.5rem,8vw,7.2rem)]">
-                Сайты
+                {copy.hero.title}
                 <span className="mt-2 block text-[0.62em] leading-none text-[#78ff8f]">
-                  которые работают
+                  {copy.hero.titleAccent}
                 </span>
               </h1>
               <p className="mt-6 max-w-md text-sm leading-7 text-white/68 md:text-base">
-                Я Илья, начинающий frontend-разработчик. Собираю лендинги,
-                веб-интерфейсы на React, Next.js,
-                TypeScript и Telegram-интеграции/боты на Python.
+                {copy.hero.intro}
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <a
                   href="#contact"
                   className="hover-bright grid size-12 place-items-center rounded-full border border-white/18 text-white transition hover:border-white"
-                  aria-label="Оставить заявку"
+                  aria-label={copy.hero.cta}
                 >
                   <svg aria-hidden="true" className="h-4 w-4" fill="none" viewBox="0 0 24 24">
                     <path
@@ -80,7 +113,7 @@ export function HeroShowcase() {
                   </svg>
                 </a>
                 <a href="#contact" className="hover-bright text-sm font-black text-white transition">
-                  Оставить заявку
+                  {copy.hero.cta}
                 </a>
               </div>
             </div>
@@ -94,7 +127,7 @@ export function HeroShowcase() {
                   muted
                   playsInline
                   preload="metadata"
-                  aria-label="Фоновое видео главного блока"
+                  aria-label={copy.hero.videoLabel}
                 >
                   <source src="/background.mp4" type="video/mp4" />
                 </video>

@@ -144,6 +144,146 @@ span {
   filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.28));
 }
 
+.brand-logo {
+  align-items: center;
+  background:
+    radial-gradient(circle at 35% 24%, rgba(120, 255, 143, 0.26), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.1));
+  border: 1px solid rgba(120, 255, 143, 0.26);
+  border-radius: 999px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 16px 38px rgba(0, 0, 0, 0.32);
+  color: #78ff8f;
+  display: inline-flex;
+  height: 3rem;
+  justify-content: center;
+  position: relative;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+  width: 3rem;
+}
+
+.brand-logo::after {
+  background: rgba(120, 255, 143, 0.88);
+  border-radius: 999px;
+  bottom: 0.42rem;
+  box-shadow: 0 0 14px rgba(120, 255, 143, 0.68);
+  content: "";
+  height: 0.3rem;
+  position: absolute;
+  right: 0.45rem;
+  width: 0.3rem;
+}
+
+.brand-logo__mark {
+  height: 2.25rem;
+  overflow: visible;
+  width: 2.25rem;
+}
+
+.brand-logo__ring {
+  fill: rgba(10, 12, 10, 0.7);
+  stroke: rgba(120, 255, 143, 0.45);
+  stroke-width: 1.5;
+}
+
+.brand-logo__bracket,
+.brand-logo__letter {
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition:
+    stroke 180ms ease,
+    transform 180ms ease;
+}
+
+.brand-logo__bracket {
+  opacity: 0.78;
+  stroke-width: 2.8;
+}
+
+.brand-logo__letter {
+  stroke-width: 3.2;
+}
+
+.brand-logo:hover,
+.brand-logo:focus-visible {
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 0 0 1px rgba(120, 255, 143, 0.2),
+    0 0 28px rgba(120, 255, 143, 0.2),
+    0 18px 44px rgba(0, 0, 0, 0.38);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.brand-logo:hover .brand-logo__bracket,
+.brand-logo:focus-visible .brand-logo__bracket {
+  transform: translateX(0.5px);
+}
+
+.brand-logo:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.brand-logo:focus-visible {
+  outline: 2px solid rgba(120, 255, 143, 0.72);
+  outline-offset: 3px;
+}
+
+.language-switcher {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 0.125rem;
+  padding: 0.1875rem;
+}
+
+.language-switcher__button {
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.48);
+  cursor: pointer;
+  font-size: 0.68rem;
+  font-weight: 900;
+  line-height: 1;
+  min-height: 1.875rem;
+  min-width: 2.1rem;
+  padding: 0.45rem 0.52rem;
+  text-transform: uppercase;
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.language-switcher__button:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.language-switcher__button:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.language-switcher__button:focus-visible {
+  outline: 2px solid rgba(120, 255, 143, 0.72);
+  outline-offset: 2px;
+}
+
+.language-switcher__button[data-active="true"] {
+  background: #78ff8f;
+  box-shadow: 0 0 24px rgba(120, 255, 143, 0.24);
+  color: #111411;
+}
+
 .service-card:hover,
 .process-card:hover {
   border-color: rgba(120, 255, 143, 0.45);
