@@ -18,6 +18,7 @@ export function HeroShowcase({
     { label: copy.nav.hero, href: "#hero" },
     { label: copy.nav.services, href: "#services" },
     { label: copy.nav.process, href: "#process" },
+    { label: copy.nav.projects, href: "#projects" },
     { label: copy.nav.contact, href: "#contact" },
   ];
 
@@ -62,7 +63,7 @@ export function HeroShowcase({
               </svg>
             </a>
 
-            <nav className="hidden items-center gap-10 text-[0.68rem] font-black uppercase tracking-[0.18em] text-white/70 md:flex">
+            <nav className="hidden items-center gap-5 text-[0.68rem] font-black uppercase tracking-[0.14em] text-white/70 md:flex lg:gap-8 lg:tracking-[0.18em]">
               {navItems.map((item) => (
                 <a key={item.href} className="hover-bright transition" href={item.href}>
                   {item.label}

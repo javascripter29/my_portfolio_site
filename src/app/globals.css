@@ -121,7 +121,8 @@ span {
 
 .hover-bright,
 .service-card,
-.process-card {
+.process-card,
+.project-card {
   transition:
     background-color 180ms ease,
     border-color 180ms ease,
@@ -133,7 +134,8 @@ span {
 
 .hover-bright:focus-visible,
 .service-card:focus-within,
-.process-card:focus-within {
+.process-card:focus-within,
+.project-card:focus-visible {
   outline: 2px solid rgba(120, 255, 143, 0.7);
   outline-offset: 3px;
 }
@@ -285,10 +287,88 @@ span {
 }
 
 .service-card:hover,
-.process-card:hover {
+.process-card:hover,
+.project-card:hover {
   border-color: rgba(120, 255, 143, 0.45);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
-  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgba(120, 255, 143, 0.16),
+    0 0 34px rgba(120, 255, 143, 0.12),
+    0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.project-card {
+  cursor: pointer;
+}
+
+.project-card:focus-visible {
+  outline: 2px solid rgba(120, 255, 143, 0.72);
+  outline-offset: 4px;
+}
+
+.project-card:hover .project-flip__face,
+.project-card:hover > div:last-child,
+.project-card:focus-visible .project-flip__face,
+.project-card:focus-visible > div:last-child {
+  border-color: rgba(120, 255, 143, 0.45);
+}
+
+.project-flip {
+  perspective: 1200px;
+}
+
+.project-flip__inner {
+  aspect-ratio: 16 / 10;
+  display: grid;
+  transform-style: preserve-3d;
+  transition: transform 520ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.project-flip__inner[data-flipped="true"] {
+  transform: rotateY(180deg);
+}
+
+.project-flip__face {
+  backface-visibility: hidden;
+  grid-area: 1 / 1;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.project-flip__back {
+  transform: rotateY(180deg);
+}
+
+.project-open {
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease;
+}
+
+.project-open:hover,
+.project-open:focus-visible {
+  background: #78ff8f;
+  box-shadow: 0 0 24px rgba(120, 255, 143, 0.24);
+  color: #111411;
+}
+
+.project-carousel {
+  scrollbar-color: rgba(120, 255, 143, 0.65) rgba(255, 255, 255, 0.08);
+  scrollbar-width: thin;
+}
+
+.project-carousel::-webkit-scrollbar {
+  height: 0.55rem;
+}
+
+.project-carousel::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.project-carousel::-webkit-scrollbar-thumb {
+  background: rgba(120, 255, 143, 0.65);
+  border-radius: 999px;
 }
 
 .hero-copy-enter {

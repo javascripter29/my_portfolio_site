@@ -15,6 +15,7 @@ export function SectionProgress({ copy }: SectionProgressProps) {
       { id: "hero", label: copy.hero },
       { id: "services", label: copy.services },
       { id: "process", label: copy.process },
+      { id: "projects", label: copy.projects },
       { id: "contact", label: copy.contact },
     ],
     [copy],
@@ -95,7 +96,7 @@ export function SectionProgress({ copy }: SectionProgressProps) {
           />
         ))}
       </div>
-      <div className="mt-3 grid grid-cols-4 gap-1 sm:gap-2">
+      <div className="mt-3 grid grid-cols-5 gap-1 sm:gap-2">
         {sections.map((section, index) => (
           <a
             key={section.id}

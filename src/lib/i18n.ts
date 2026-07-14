@@ -14,6 +14,7 @@ export const dictionary = {
       hero: "Головна",
       services: "Послуги",
       process: "Етапи",
+      projects: "Проєкти",
       contact: "Контакт",
     },
     hero: {
@@ -57,8 +58,17 @@ export const dictionary = {
         "Запуск проєкту і фінальна перевірка",
       ],
     },
+    projects: {
+      eyebrow: "04 / Проєкти",
+      title: "Мої проєкти",
+      hint: "Гортайте та відкривайте проєкти",
+      openLabel: "Відкрити проєкт",
+      previewLabel: "Прев'ю проєкту",
+      details: "Про проєкт",
+      visit: "Відкрити",
+    },
     contact: {
-      eyebrow: "04 / Контакт",
+      eyebrow: "05 / Контакт",
       title: "Розкажіть про задачу",
       intro:
         "Залиште контакт і кілька слів про проєкт. Заявка піде мені в Telegram, а я повернуся з уточнювальними питаннями та запропоную наступний крок.",
@@ -92,6 +102,7 @@ export const dictionary = {
       hero: "Home",
       services: "Services",
       process: "Process",
+      projects: "Projects",
       contact: "Contact",
     },
     hero: {
@@ -135,8 +146,17 @@ export const dictionary = {
         "Project launch and final check",
       ],
     },
+    projects: {
+      eyebrow: "04 / Projects",
+      title: "My projects",
+      hint: "Swipe and open projects",
+      openLabel: "Open project",
+      previewLabel: "Project preview",
+      details: "About project",
+      visit: "Visit",
+    },
     contact: {
-      eyebrow: "04 / Contact",
+      eyebrow: "05 / Contact",
       title: "Tell me about the task",
       intro:
         "Leave your contact and a few words about the project. The request goes to my Telegram, and I'll come back with clarifying questions and the next step.",
@@ -170,6 +190,7 @@ export const dictionary = {
       hero: "Главная",
       services: "Услуги",
       process: "Этапы",
+      projects: "Мои проекты",
       contact: "Контакт",
     },
     hero: {
@@ -213,8 +234,17 @@ export const dictionary = {
         "Запуск проекта и финальная проверка",
       ],
     },
+    projects: {
+      eyebrow: "04 / Проекты",
+      title: "Мои проекты",
+      hint: "Листайте и открывайте проекты",
+      openLabel: "Открыть проект",
+      previewLabel: "Превью проекта",
+      details: "О проекте",
+      visit: "Открыть",
+    },
     contact: {
-      eyebrow: "04 / Контакт",
+      eyebrow: "05 / Контакт",
       title: "Расскажите о задаче",
       intro:
         "Оставьте контакт и пару слов о проекте. Заявка уйдет мне в Telegram, а я вернусь с уточняющими вопросами и предложу следующий шаг.",
